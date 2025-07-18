@@ -9,8 +9,11 @@
 </form>
 
 <script>
+  
 document.getElementById('myForm').addEventListener('submit', function(e){
   e.preventDefault();
+  const Order_Date = this.Order_Date.value;
+  alert('Selected Date: ' + Order_Date);
   fetch('https://docs.google.com/spreadsheets/d/1jpPkbaRQ1AVB-V0dt2jY_4EkH9hWM3ecxruTyVLIShc/edit?gid=582532544#gid=582532544', {
     method: 'POST',
     body: JSON.stringify({
