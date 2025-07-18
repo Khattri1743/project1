@@ -1,19 +1,25 @@
 <form id="myForm">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <textarea name="message" placeholder="Message"></textarea>
+  <input type="text" name="Name" placeholder="Your Name" required>
+  <input type="email" name="Email" placeholder="Email" required>
+  <input type="number" name="Phone_Number" placeholder="Phone_Number" required>
+  <input type="number" name="Quantity" placeholder="Quantity" required>
+  <input type="text" name="Receive_Location" placeholder="Receive_Location" required>
+  <input type="date" name="Order_Date" placeholder="Order_Date" required>
   <button type="submit">Send</button>
 </form>
 
 <script>
 document.getElementById('myForm').addEventListener('submit', function(e){
   e.preventDefault();
-  fetch('YOUR_WEB_APP_URL', {
+  fetch('https://docs.google.com/spreadsheets/d/1jpPkbaRQ1AVB-V0dt2jY_4EkH9hWM3ecxruTyVLIShc/edit?gid=582532544#gid=582532544', {
     method: 'POST',
     body: JSON.stringify({
-      name: this.name.value,
-      email: this.email.value,
-      message: this.message.value
+      Name: this.Name.value,
+      Email: this.Email.value,
+      Phone_Number: this.Phone_Number.value,
+      Quantity: this.Quantity.value,
+      Receive_Location: this.Receive_Location.value,
+      Order_Date: this.Order_Date.value
     }),
     headers: { 'Content-Type': 'application/json' }
   })
